@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class ModeloPuerta : MonoBehaviour
 {
-    /*
     public GameObject AreaActiva;
     public ActivadorPuerta AreaDeActivacion;
     public Transform point1;
-    */
-
-    /*
     public Transform point2;
     //private float startTime;
     //public float speed;
@@ -28,5 +24,5 @@ public class ModeloPuerta : MonoBehaviour
     {
 
     }
-    */
+    
 }

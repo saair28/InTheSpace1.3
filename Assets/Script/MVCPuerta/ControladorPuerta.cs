@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ControladorPuerta : MonoBehaviour
 {
-    /*
+    
    public ModeloPuerta modelo;
     // Start is called before the first frame update
     void Start()
@@ -39,5 +39,4 @@ public class ControladorPuerta : MonoBehaviour
             this.transform.position = Vector3.Lerp(transform.position, modelo.point1.position, modelo.contador);
         }
     }
-    */
 }

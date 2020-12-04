@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VistaPuerta : MonoBehaviour
-{/*
+{
     public ControladorPuerta controlador;
     public ModeloPuerta modelo;
 
@@ -18,5 +18,4 @@ public class VistaPuerta : MonoBehaviour
 
         controlador.SeAbrira();
     }
-*/
 }

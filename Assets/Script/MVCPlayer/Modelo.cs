@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Modelo : MonoBehaviour
 {
-    /*
+    
     public static Modelo instance;
 
     public float saltoFuerza = 5.0f;
@@ -21,9 +21,6 @@ public class Modelo : MonoBehaviour
     public Transform ZoneInteraction;
 
     public bool loToma = false;
-    */
-
-    /*  
      public bool deteccionSuelo = false;
 
     //public Rigidbody rb;
@@ -60,6 +57,5 @@ public class Modelo : MonoBehaviour
     {
 
     }
-    */
 
 }

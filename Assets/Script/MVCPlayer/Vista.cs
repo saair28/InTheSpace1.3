@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vista : MonoBehaviour
-{/*
+{
     public Controlador controlador;
     public Modelo modelo;
 
@@ -21,5 +22,5 @@ public class Vista : MonoBehaviour
 
         controlador.Move();
     }
-    */
+    
 }

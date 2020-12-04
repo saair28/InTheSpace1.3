@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Controlador : MonoBehaviour
 {
-    /*public Modelo modelo;
+    public Modelo modelo;
 
     // Start is called before the first frame update
     void Start()
@@ -119,5 +119,5 @@ public class Controlador : MonoBehaviour
             SceneManager.LoadScene("Victoria");
         }
     }
-    */
+    
 }
