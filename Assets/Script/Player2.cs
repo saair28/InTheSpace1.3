@@ -42,7 +42,7 @@ public class Player2 : MonoBehaviour
     float turnSmoothVelocity;
 
     public float gravity = -9.81f;
-
+    public bool JugadorEnScena;
     Vector3 velocity;
 
     public Transform groundCheck;
@@ -53,11 +53,13 @@ public class Player2 : MonoBehaviour
 
     public float jumpHeight = 3f;
 
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        
+
+        FindObjectOfType<AudioManager>().Play("Tutorial1");
     }
 
     // Update is called once per frame
@@ -162,6 +164,11 @@ public class Player2 : MonoBehaviour
         }
     }
 
+    void Soundtrack()
+    {
+        FindObjectOfType<AudioManager>().Play("AudioFondo");
+    }
+
     /*
     void PlayerSalto()
     {
@@ -210,6 +217,7 @@ public class Player2 : MonoBehaviour
             Nivel2.SetActive(true);
             Luz1.SetActive(false);
             Luz2.SetActive(true);
+            JugadorEnScena = false;
         }
     }
 }

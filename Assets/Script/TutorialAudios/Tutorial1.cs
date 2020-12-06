@@ -21,8 +21,8 @@ public class Tutorial1 : MonoBehaviour
     {
         if (other.tag == "Player" )
         {
-            //SonidoAudio1 = true;
-            FindObjectOfType<AudioManager>().Play("Tutorial1");
+            //FindObjectOfType<AudioManager>.pla
+            //FindObjectOfType<AudioManager>().Play("Tutorial1");
         }
     }
 }

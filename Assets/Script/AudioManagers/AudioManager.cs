@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     PauseMenu my_pauseStat_script;
     public GameObject my_tuto1;
     Tutorial1 my_tuto1_script;
+    public static AudioManager instance;
     
     // Start is called before the first frame update
 
@@ -16,10 +17,22 @@ public class AudioManager : MonoBehaviour
     {
         my_pauseStat_script = my_pauseStat.GetComponent<PauseMenu>();
         my_tuto1_script = my_tuto1.GetComponent<Tutorial1>();
-        Play("SonidoFondo");
+        if (FindObjectOfType<Player2>().JugadorEnScena == true)
+        {
+            Play("AudioFondo");
+        }
+
     }
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -31,15 +44,17 @@ public class AudioManager : MonoBehaviour
         }
         
     }
-
+    
     public void Update()
-    {/*
+    {
+        /*
         if (my_pauseStat_script.GameIsPaused == false)
         {
             
             if (my_tuto1_script.SonidoAudio1 == true) 
             { 
-                Play("Tutorial1"); 
+                Play("Tutorial1");
+                Debug.Log("HABLa");
             }
 
 
