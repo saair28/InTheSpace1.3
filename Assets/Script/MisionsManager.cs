@@ -20,6 +20,10 @@ public class MisionsManager : MonoBehaviour
 
     public GameObject puerta3;
 
+    public bool sonido1 = false;
+    public bool sonido2 = false;
+    public bool sonido3 = false;
+
     public bool m1;
     public bool m2;
     public bool m3;
@@ -55,16 +59,32 @@ public class MisionsManager : MonoBehaviour
         {
             puerta1.SetActive(false);
             puerta2.SetActive(false);
+            if (sonido1 == false)
+            {
+                FindObjectOfType<AudioManager>().Play("MisionesNivel1Completadas");
+                sonido1 = true;
+            }
+
         }
 
         if (m4 && m5)
         {
             puerta3.SetActive(false);
+            if (sonido2 == false)
+            {
+                FindObjectOfType<AudioManager>().Play("MisionesNivel2Completadas");
+                sonido2 = true;
+            }
         }
 
         if (m6)
         {
             SceneManager.LoadScene("Victoria");
+            if(sonido3 == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Ganaste");
+                sonido3 = true;
+            }
         }
     }
 }
