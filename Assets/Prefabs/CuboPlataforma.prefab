@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6235036176234784642}
   m_Layer: 13
   m_Name: CuboPlataforma
-  m_TagString: Untagged
+  m_TagString: Cubo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

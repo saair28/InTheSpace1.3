@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5532230522614748838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7068028945706353942}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7068028945706353942}
   - component: {fileID: 5563149649882305514}
-  - component: {fileID: 3610344963774265650}
+  - component: {fileID: 4775898686232428878}
   m_Layer: 15
   m_Name: Placa_Presion
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   restarY: 0.2
   misionCompleta: 0
   Hijo: {fileID: 5532230522614748838}
---- !u!65 &3610344963774265650
+--- !u!65 &4775898686232428878
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,5 +156,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 229.88693, y: 50.962387, z: 230.633}
+  m_Center: {x: 0.2942443, y: -8.0605955, z: -0.004351139}
