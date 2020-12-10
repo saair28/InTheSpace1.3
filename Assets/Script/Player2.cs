@@ -117,6 +117,8 @@ public class Player2 : MonoBehaviour
 
                 Agarra.GetComponent<Agarrar>().Sujetar = false;
 
+                Agarra.transform.position = ZoneInteraction.transform.position;
+
                 Agarra.transform.parent = ZoneInteraction.transform;
 
                 //Agarra.GetComponent<Collider>().enabled = false;

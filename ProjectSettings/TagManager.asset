@@ -18,6 +18,8 @@ TagManager:
   - finDelMundo
   - Win
   - EndPoint
+  - Techo
+  - Cubo
   layers:
   - Default
   - TransparentFX

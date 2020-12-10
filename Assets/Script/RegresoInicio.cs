@@ -45,11 +45,19 @@ public class RegresoInicio : MonoBehaviour
         {
             regresar = true;
         }
+        if (other.tag == "Techo")
+        {
+            regresar = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "finDelMundo")
+        {
+            regresar = false;
+        }
+        if (other.tag == "Techo")
         {
             regresar = false;
         }

@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4634454ea65711c419a296d8dc4552ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerEnArea: 0
+  playerEnArea: 0
+  playerSalioDelArea: 0
 --- !u!1 &7805040154257974550
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 4f7807a180c07604a909397e0bdf155f, type: 3}
+  - {fileID: 2100000, guid: 6b5dab5e21695594781972faedfdfee6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -262,5 +263,4 @@ MonoBehaviour:
   AreaActiva: {fileID: 4498342212271856388}
   point1: {fileID: 6109638131005046773}
   point2: {fileID: 3856770636306630863}
-  speed: 1
-  journeyLength: 10
+  contador: 0

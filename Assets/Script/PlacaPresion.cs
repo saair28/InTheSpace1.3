@@ -16,16 +16,18 @@ public class PlacaPresion : MonoBehaviour
 
     public bool misionCompleta = false;
 
+    public GameObject Hijo;
+
 
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
 
-        x = transform.position.x;
+        x = Hijo.transform.position.x;
 
-        y = transform.position.y;
+        y = Hijo.transform.position.y;
 
-        z = transform.position.z;
+        z = Hijo.transform.position.z;
     }
 
     void Update()
@@ -34,7 +36,7 @@ public class PlacaPresion : MonoBehaviour
         {
             Vector3 Arriba = new Vector3(x, y, z);
 
-            transform.position = Arriba;
+            Hijo.transform.position = Arriba;
 
             misionCompleta = false;
         }
@@ -43,7 +45,7 @@ public class PlacaPresion : MonoBehaviour
         {
             Vector3 Abajo = new Vector3(x, y - restarY, z);
 
-            transform.position = Abajo;
+            Hijo.transform.position = Abajo;
 
             misionCompleta = true;
         }
@@ -58,28 +60,44 @@ public class PlacaPresion : MonoBehaviour
     {
         ispressed = false;
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cubo"))
+        {
+            Presionar();
+        }
+    }
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            ispressed = true;
+            Presionar();
 
             Debug.Log("das");
         }
 
         if (collision.gameObject.CompareTag("Cubo"))
         {
-
-            ispressed = true;
+            Presionar();
         }
     }
-
-    private void OnCollisionExit(Collision collision)
+    */
+    private void OnTriggerExit(Collider other)
     {
         Soltar();
     }
-    
+    /*
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.layer == LayerMask.NameToLayer("Player") )
+        {
+            Presionar();
+        }
+    }
+    */
 }
+
 
 // -7.426799 80.39 30.9 ,    80.03
