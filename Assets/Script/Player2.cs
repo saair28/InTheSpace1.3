@@ -48,6 +48,7 @@ public class Player2 : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public bool a;
 
     bool isGrounded;
 
@@ -58,7 +59,8 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         instance = this;
-
+        JugadorEnScena = true;
+        //FindObjectOfType<AudioManager>().Play("Tutorial1");
         FindObjectOfType<AudioManager>().Play("Tutorial1");
     }
 
@@ -67,7 +69,19 @@ public class Player2 : MonoBehaviour
     {
         Sujetar();
 
-        
+        //Soundtrack()
+        if(FindObjectOfType<AudioManager>().IsPlaying("Tutorial1"))
+        {
+            a = false;
+        }
+        else
+        {
+            a = true;
+        }
+        if (a == true){
+            FindObjectOfType<AudioManager>().Play("Tuto2");
+            a = false;
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -106,6 +120,8 @@ public class Player2 : MonoBehaviour
 
 
     }
+
+    
 
     public void Sujetar()
     {

@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
     public GameObject my_tuto1;
     Tutorial1 my_tuto1_script;
     public static AudioManager instance;
-    
+    //public bool audioPlaying;
+    public bool isPaused;
+
     // Start is called before the first frame update
 
     public void Start()
@@ -41,6 +43,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            
         }
         
     }
@@ -68,17 +71,63 @@ public class AudioManager : MonoBehaviour
             }
         }*/
 
+        
+        
+
     }
 
     // Update is called once per frame
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        /*
+        if (s.source.isPlaying == false)
+        {
+            s.source.Play();
+            audioPlaying = true;
+            
+        }*/
         s.source.Play();
     }
     public void Pause(string name)
     {
+
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        /*
+        if (s.source.isPlaying == true)
+        {
+            audioPlaying = false;
+            s.source.Pause();
+        }*/
+        isPaused = true;
         s.source.Pause();
     }
+    /*
+    public bool Buscador()
+    {
+        Sound s = 
+    }*/
+
+    public bool IsPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s.source.isPlaying == true)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
+    public void Resume(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (isPaused== true)
+        {
+            s.source.UnPause();
+            isPaused = false;
+        }
+    }
+    
 }
