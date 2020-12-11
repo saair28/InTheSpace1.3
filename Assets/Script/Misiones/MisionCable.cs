@@ -10,15 +10,15 @@ public class MisionCable : MonoBehaviour
 
     public int cont = 0;
 
-    //public float cronometro = 0;
+    public float cronometro = 0;
 
-   // public float Stop;
+    public float Stop;
 
-   // public bool Ocupado = false;
+    public bool Ocupado = false;
 
-   // public ControladorAudio controlador;
+    public ControladorAudio controlador;
 
-    //public bool vericar = false;
+    public bool verificar = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,34 +29,38 @@ public class MisionCable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // controlador = ControladorAudio.instance;
+       controlador = ControladorAudio.instance;
 
-       // vericar = controlador.GetComponent<ControladorAudio>().alto;
+        verificar = controlador.GetComponent<ControladorAudio>().alto;
 
         Player2 = Player2.instance;
 
         Sereproduce = Player2.GetComponent<Player2>().Sereproduce;
-/*
-        if (cont == 1)
-        {
-            cronometro = cronometro + 1 + Time.deltaTime;
-        }
 
-        if (cronometro <= Stop)
+        if (FindObjectOfType<AudioManager>().IsPlaying("MisionCables")== true)
         {
-            Ocupado = false;
+            Debug.Log("sa");
+
+            cronometro = cronometro + 1 * Time.deltaTime;
+
+            Ocupado = true;
         }
 
         else
         {
-            Ocupado = true;
+            Ocupado = false;
         }
-*/
+
+        if (cronometro >= Stop)
+        {
+            FindObjectOfType<AudioManager>().Pause("MisionCables");
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && Sereproduce == false && cont <= 0 )
+        if (other.tag == "Player" && Sereproduce == false && cont <= 0 && verificar == false )
         {
             //FindObjectOfType<AudioManager>.pla
             FindObjectOfType<AudioManager>().Play("MisionCables");

@@ -56,6 +56,10 @@ public class Player2 : MonoBehaviour
 
     public float jumpHeight = 3f;
 
+    public GameObject Nucleo;
+
+    public float Secae;
+
 
 
     // Start is called before the first frame update
@@ -151,7 +155,12 @@ public class Player2 : MonoBehaviour
 
         else if (Agarra != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Agarra == Nucleo)
+            {
+                Secae = Secae + 1 * Time.deltaTime;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) || Secae >= 3)
             {
                 Agarra.GetComponent<Agarrar>().Sujetar = true;
 
@@ -170,6 +179,8 @@ public class Player2 : MonoBehaviour
                 loToma = false;
 
                 LoSujeta = false;
+
+                Secae = 0;
 
             }
         }

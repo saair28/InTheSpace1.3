@@ -35,24 +35,24 @@ public class ControladorAudio : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
+    {
         aud1 = Audio1.GetComponent<MisionCable>().Ocupado;
-
-        aud2 = Audio2.GetComponent<MisionPalanca>().Ocupado;
-        aud3 = Audio3.GetComponent<MisionOxigeno>().Ocupado;
-        aud4 = Audio4.GetComponent<MisionCable>().Ocupado;
-        aud5 = Audio5.GetComponent<MisionPlacaDePresion>().Ocupado;
+        
+       // aud2 = Audio2.GetComponent<MisionPalanca>().Ocupado;
+       // aud3 = Audio3.GetComponent<MisionOxigeno>().Ocupado;
+        //aud4 = Audio4.GetComponent<MisionCable>().Ocupado;
+        //aud5 = Audio5.GetComponent<MisionPlacaDePresion>().Ocupado;
         aud6 = Audio6.GetComponent<IntroduccionPlanta1>().Ocupado;
-        aud7 = Audio7.GetComponent<IntroduccionPlanta2>().Ocupado;
-        aud8 = Audio8.GetComponent<IntroduccionFinal>().Ocupado;
-        aud9 = Audio9.GetComponent<MisionNucleoAudio>().Ocupado;
+       // aud7 = Audio7.GetComponent<IntroduccionPlanta2>().Ocupado;
+       // aud8 = Audio8.GetComponent<IntroduccionFinal>().Ocupado;
+       // aud9 = Audio9.GetComponent<MisionNucleoAudio>().Ocupado;
         Verificador();
-        */
+        
     }
 
     public void Verificador()
     {
-        if (aud1 == true )
+        if (aud1 == true || aud6 == true)
         {
             alto = true;
         }
