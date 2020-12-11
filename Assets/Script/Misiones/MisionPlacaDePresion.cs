@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MisionPlacaDePresion : MonoBehaviour
 {
-    public Player2 Player2;
+   // public Player2 Player2;
 
-    public bool Sereproduce;
+    //public bool Sereproduce;
 
     public int cont = 0;
 
@@ -33,9 +33,9 @@ public class MisionPlacaDePresion : MonoBehaviour
 
         verificar = controlador.GetComponent<ControladorAudio>().alto;
 
-        Player2 = Player2.instance;
+       // Player2 = Player2.instance;
 
-        Sereproduce = Player2.GetComponent<Player2>().Sereproduce;
+       // Sereproduce = Player2.GetComponent<Player2>().Sereproduce;
 
         if (FindObjectOfType<AudioManager>().IsPlaying("MisionPlacaDePresion") == true)
         {
@@ -60,7 +60,7 @@ public class MisionPlacaDePresion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && Sereproduce == false && cont <= 0 && verificar == false)
+        if (other.tag == "Player" && cont <= 0 && verificar == false)
         {
             //FindObjectOfType<AudioManager>.pla
             FindObjectOfType<AudioManager>().Play("MisionPlacaDePresion");

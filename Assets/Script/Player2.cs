@@ -13,7 +13,7 @@ public class Player2 : MonoBehaviour
     
     public bool LoSujeta;
 
-    public bool Sereproduce = false;
+    //public bool Sereproduce = false;
 
     public GameObject Nivel2;
 
@@ -241,12 +241,13 @@ public class Player2 : MonoBehaviour
             Luz2.SetActive(true);
             JugadorEnScena = false;
         }
-        if (other.gameObject.CompareTag("Audios"))
+       /* if (other.gameObject.CompareTag("Audios"))
         {
             Sereproduce = true;
         }
+       */
     }
-
+/*
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Audios"))
@@ -254,4 +255,5 @@ public class Player2 : MonoBehaviour
             Sereproduce = false;
         }
     }
+*/
 }
