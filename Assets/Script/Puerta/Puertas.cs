@@ -12,6 +12,9 @@ public class Puertas : MonoBehaviour
     //public float speed;
     //public float journeyLength = 1.0f;
     public float contador = 0f;
+    public GameObject audioTuTorial;
+    public bool abrir;
+    public bool puertaTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -22,25 +25,57 @@ public class Puertas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AreaDeActivacion.playerEnArea == true)
+        if (puertaTutorial == true)
         {
-            AreaDeActivacion.playerSalioDelArea = false;
-            contador = contador + Time.deltaTime;
+            abrir = audioTuTorial.GetComponent<AudioManager>().abrir;
+
+            if (abrir == true)
+            {
+                if (AreaDeActivacion.playerEnArea == true)
+                {
+                    AreaDeActivacion.playerSalioDelArea = false;
+                    contador = contador + Time.deltaTime;
+                }
+                if (AreaDeActivacion.playerSalioDelArea == true)
+                {
+                    AreaDeActivacion.playerEnArea = false;
+                    contador = contador - Time.deltaTime;
+                }
+                if (contador > 1)
+                {
+                    contador = 1;
+                }
+                else if (contador < 0)
+                {
+                    contador = 0;
+                }
+                this.transform.position = Vector3.Lerp(point1.position, point2.position, contador);
+            }
         }
-        if (AreaDeActivacion.playerSalioDelArea == true)
+
+
+        else
         {
-            AreaDeActivacion.playerEnArea = false;
-            contador = contador - Time.deltaTime;
+            if (AreaDeActivacion.playerEnArea == true)
+            {
+                AreaDeActivacion.playerSalioDelArea = false;
+                contador = contador + Time.deltaTime;
+            }
+            if (AreaDeActivacion.playerSalioDelArea == true)
+            {
+                AreaDeActivacion.playerEnArea = false;
+                contador = contador - Time.deltaTime;
+            }
+            if (contador > 1)
+            {
+                contador = 1;
+            }
+            else if (contador < 0)
+            {
+                contador = 0;
+            }
+            this.transform.position = Vector3.Lerp(point1.position, point2.position, contador);
         }
-        if (contador > 1)
-        {
-            contador = 1;
-        }
-        else if (contador < 0)
-        {
-            contador = 0;
-        }
-        this.transform.position = Vector3.Lerp(point1.position, point2.position, contador);
     }
 
 }

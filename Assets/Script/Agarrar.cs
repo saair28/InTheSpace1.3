@@ -21,12 +21,15 @@ public class Agarrar : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Sujetar")
-        {
-            other.GetComponentInParent<Player2>().Manos = this.gameObject;
 
-            Entrar = true;
-        }
+            if (other.tag == "Sujetar")
+            {
+                other.GetComponentInParent<Player2>().Manos = this.gameObject;
+
+                Entrar = true;
+            }
+       
+
     }
 
     private void OnTriggerExit(Collider other)

@@ -13,6 +13,8 @@ public class Player2 : MonoBehaviour
     
     public bool LoSujeta;
 
+    //public bool Sereproduce = false;
+
     public GameObject Nivel2;
 
     public GameObject Luz1;
@@ -54,6 +56,11 @@ public class Player2 : MonoBehaviour
 
     public float jumpHeight = 3f;
 
+    public GameObject Nucleo;
+
+    public float Secae;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +68,7 @@ public class Player2 : MonoBehaviour
         instance = this;
         JugadorEnScena = true;
         //FindObjectOfType<AudioManager>().Play("Tutorial1");
-        FindObjectOfType<AudioManager>().Play("Tutorial1");
+       FindObjectOfType<AudioManager>().Play("Tutorial1");
     }
 
     // Update is called once per frame
@@ -70,18 +77,8 @@ public class Player2 : MonoBehaviour
         Sujetar();
 
         //Soundtrack()
-        if(FindObjectOfType<AudioManager>().IsPlaying("Tutorial1"))
-        {
-            a = false;
-        }
-        else
-        {
-            a = true;
-        }
-        if (a == true){
-            FindObjectOfType<AudioManager>().Play("Tuto2");
-            a = false;
-        }
+        
+
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -158,7 +155,12 @@ public class Player2 : MonoBehaviour
 
         else if (Agarra != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Agarra == Nucleo)
+            {
+                Secae = Secae + 1 * Time.deltaTime;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) || Secae >= 3)
             {
                 Agarra.GetComponent<Agarrar>().Sujetar = true;
 
@@ -177,6 +179,8 @@ public class Player2 : MonoBehaviour
                 loToma = false;
 
                 LoSujeta = false;
+
+                Secae = 0;
 
             }
         }
@@ -237,5 +241,19 @@ public class Player2 : MonoBehaviour
             Luz2.SetActive(true);
             JugadorEnScena = false;
         }
+       /* if (other.gameObject.CompareTag("Audios"))
+        {
+            Sereproduce = true;
+        }
+       */
     }
+/*
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Audios"))
+        {
+            Sereproduce = false;
+        }
+    }
+*/
 }

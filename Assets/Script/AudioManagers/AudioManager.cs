@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     //public bool audioPlaying;
     public bool isPaused;
+    public bool abrir = false;
+    public float cronometro = 0;
+    public float Abrete;
 
     // Start is called before the first frame update
 
@@ -25,16 +28,18 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
     void Awake()
     {
         if (instance == null)
             instance = this;
         else
         {
+
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -50,6 +55,12 @@ public class AudioManager : MonoBehaviour
     
     public void Update()
     {
+        cronometro =  cronometro + 1 * Time.deltaTime;
+
+        if (cronometro >= Abrete)
+        {
+            abrir = true;
+        }
         /*
         if (my_pauseStat_script.GameIsPaused == false)
         {
@@ -71,8 +82,8 @@ public class AudioManager : MonoBehaviour
             }
         }*/
 
-        
-        
+
+
 
     }
 

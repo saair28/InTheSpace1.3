@@ -8,7 +8,9 @@ public class Cables : MonoBehaviour
     //public GameObject circle_Img;
     //public GameObject circle;
     public GameObject my_circle;
+    public GameObject teclaE;
     public GameObject canvasCircle;
+    public GameObject ImagenCirculo;
     Circle my_circle_script;
     //public GameObject circleFill;
     public bool prenderLuces;
@@ -20,7 +22,7 @@ public class Cables : MonoBehaviour
         my_circle_script = my_circle.GetComponent<Circle>();
 
         my_circle.SetActive(false);
-        canvasCircle.SetActive(false);
+        // canvasCircle.SetActive(true);
 
     }
 
@@ -51,23 +53,31 @@ public class Cables : MonoBehaviour
     public void ManejoDeCables()
     {   
         if(enRangoDeArreglo == true)
-        { 
+        {
+            teclaE.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 my_circle.SetActive(true);
-                canvasCircle.SetActive(true);
+                ImagenCirculo.SetActive(true);
+                //canvasCircle.SetActive(true);
             }
             else if (my_circle_script.desactivaCircle == true)
             {
                 my_circle.SetActive(false);
-                canvasCircle.SetActive(false);
+                //canvasCircle.SetActive(false);
                 //my_circle_script.progress = 0;
-                prenderLuces = true; ;
+                prenderLuces = true;
+                ImagenCirculo.SetActive(false);
             }
         } else
         {
+
+            teclaE.SetActive(false);
+
+            ImagenCirculo.SetActive(false);
             my_circle.SetActive(false);
-            canvasCircle.SetActive(false);
+            //canvasCircle.SetActive(false);
             my_circle_script.progress = 0;
             
         }
@@ -98,14 +108,15 @@ public class Cables : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+
             enRangoDeArreglo = true;
-            
         } 
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
+
             enRangoDeArreglo = false;
 
         }

@@ -113,6 +113,7 @@ MonoBehaviour:
   Sujetar: 1
   agarrado: 0
   Entrar: 0
+  Nucleo: 1
   cabina: {fileID: 0}
 --- !u!54 &5643508094753637954
 Rigidbody:
