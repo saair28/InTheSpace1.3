@@ -23,7 +23,7 @@ public class ActivadorSwitcher2 : MonoBehaviour
     {
         if (FindObjectOfType<SwitcherManager>().ganaste == false)
         {
-            if (AreaSwitcher.PlayerEnArea == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
+            if (AreaSwitcher.PlayerEnArea == true )//&& FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -36,7 +36,7 @@ public class ActivadorSwitcher2 : MonoBehaviour
                 contador = 0;
             }
 
-            if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
+            if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true) //&& FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
             {
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(startMark.position, endMark.position, contador);
@@ -47,7 +47,7 @@ public class ActivadorSwitcher2 : MonoBehaviour
             {
                 contador = 0;
             }
-            if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false && FindObjectOfType<EndMark>().Switch2EnEndMark)
+            if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<EndMark>().Switch2EnEndMark) //&& FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false && FindObjectOfType<EndMark>().Switch2EnEndMark)
             {
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(endMark.position, startMark.position, contador);

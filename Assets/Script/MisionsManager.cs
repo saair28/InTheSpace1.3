@@ -44,7 +44,7 @@ public class MisionsManager : MonoBehaviour
     {
         PasaASiguienteNivel();
         m1 = mision1.GetComponent<Cables>().prenderLuces;
-        m2 = mision2.GetComponent<AreaDeAccionamiento>().misionCUMPLIDA;
+        m2 = mision2.GetComponent<SwitcherManager>().ganaste;
         m3 = mision3.GetComponent<CompletarOxigeno>().misionCompleta;
 
         m4 = mision4.GetComponent<Cables>().prenderLuces;
