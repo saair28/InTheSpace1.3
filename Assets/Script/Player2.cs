@@ -13,6 +13,8 @@ public class Player2 : MonoBehaviour
     
     public bool LoSujeta;
 
+    public bool Sereproduce = false;
+
     public GameObject Nivel2;
 
     public GameObject Luz1;
@@ -55,13 +57,14 @@ public class Player2 : MonoBehaviour
     public float jumpHeight = 3f;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         JugadorEnScena = true;
         //FindObjectOfType<AudioManager>().Play("Tutorial1");
-        FindObjectOfType<AudioManager>().Play("Tutorial1");
+       FindObjectOfType<AudioManager>().Play("Tutorial1");
     }
 
     // Update is called once per frame
@@ -70,18 +73,8 @@ public class Player2 : MonoBehaviour
         Sujetar();
 
         //Soundtrack()
-        if(FindObjectOfType<AudioManager>().IsPlaying("Tutorial1"))
-        {
-            a = false;
-        }
-        else
-        {
-            a = true;
-        }
-        if (a == true){
-            FindObjectOfType<AudioManager>().Play("Tuto2");
-            a = false;
-        }
+        
+
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -236,6 +229,18 @@ public class Player2 : MonoBehaviour
             Luz1.SetActive(false);
             Luz2.SetActive(true);
             JugadorEnScena = false;
+        }
+        if (other.gameObject.CompareTag("Audios"))
+        {
+            Sereproduce = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Audios"))
+        {
+            Sereproduce = false;
         }
     }
 }

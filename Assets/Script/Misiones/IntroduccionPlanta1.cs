@@ -4,74 +4,64 @@ using UnityEngine;
 
 public class IntroduccionPlanta1 : MonoBehaviour
 {
-   // AudioSource audioSource;
-    AudioManager my_audio_script;
-    public GameObject my_audio;
-    public bool toggleAudio;
-    public float b;
-    public float a;
-    public bool c;
-    public bool toggleAudio2;
-    public GameObject IntroP1;
-    //public GameObject Intro;
+    public Player2 Player2;
+
+    public bool Sereproduce;
+
+    public int cont = 0;
+
+    //public float cronometro = 0;
+
+    // public float Stop;
+
+    // public bool Ocupado = false;
+
+    // public ControladorAudio controlador;
+
+    //public bool vericar = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        my_audio_script = my_audio.GetComponent<AudioManager>();
-        //audioSource = my_audio_script.GetComponent<AudioSource>();
-        toggleAudio = false;
-        b = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (c == true)
-        {
-            if (b > 2)
-            {
+        // controlador = ControladorAudio.instance;
 
-                Destroy(IntroP1);
-                //Intro.SetActive(false);
+        // vericar = controlador.GetComponent<ControladorAudio>().alto;
 
-            }
-            else
-            {
-                a = Time.deltaTime / 5;
-                
-            }
-            b = b + a; //Time.deltaTime/10;
-            Debug.Log(b);
-        }
-        
-        if (FindObjectOfType<AudioManager>().IsPlaying("Tutorial1") == true)
-        {
-            toggleAudio = false;
-        }
-        else
-        {
-            toggleAudio = true;
-        }
+        Player2 = Player2.instance;
 
-        if (toggleAudio == true && FindObjectOfType<AudioManager>().IsPlaying("Tuto2") == false)
-        {
-            FindObjectOfType<AudioManager>().Play("IntroduccionPlanta1Audio");
-            toggleAudio = false;
-            c = true;
-            
-        }
+        Sereproduce = Player2.GetComponent<Player2>().Sereproduce;
+        /*
+                if (cont == 1)
+                {
+                    cronometro = cronometro + 1 + Time.deltaTime;
+                }
 
-        
+                if (cronometro <= Stop)
+                {
+                    Ocupado = false;
+                }
 
+                else
+                {
+                    Ocupado = true;
+                }
+        */
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && Sereproduce == false && cont <= 0)
         {
 
-            toggleAudio = true;
-            
-            
+            FindObjectOfType<AudioManager>().Play("IntroduccionPlanta1Audio");
+
+            cont = cont + 1;
             /*
             if (FindObjectOfType<AudioManager>().IsPlaying("Tutorial1") == false)
             {
@@ -89,6 +79,7 @@ public class IntroduccionPlanta1 : MonoBehaviour
 
         }
     }
+    /*
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -101,4 +92,5 @@ public class IntroduccionPlanta1 : MonoBehaviour
             
         }
     }
+    */
 }

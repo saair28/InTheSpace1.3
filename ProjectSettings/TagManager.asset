@@ -20,6 +20,7 @@ TagManager:
   - EndPoint
   - Techo
   - Cubo
+  - Audios
   layers:
   - Default
   - TransparentFX
