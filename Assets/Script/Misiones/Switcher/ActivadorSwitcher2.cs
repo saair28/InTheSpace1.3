@@ -33,6 +33,7 @@ public class ActivadorSwitcher2 : MonoBehaviour
             else
             {
                 ActivarSwitch = false;
+                contador = 0;
             }
 
             if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
@@ -40,7 +41,11 @@ public class ActivadorSwitcher2 : MonoBehaviour
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(startMark.position, endMark.position, contador);
                 ActivarSwitch = false;
-                
+
+            }
+            else
+            {
+                contador = 0;
             }
             if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false && FindObjectOfType<EndMark>().Switch2EnEndMark)
             {
@@ -48,17 +53,29 @@ public class ActivadorSwitcher2 : MonoBehaviour
                 this.transform.position = Vector3.Lerp(endMark.position, startMark.position, contador);
                 ActivarSwitch = false;
             }
+            else
+            {
+                contador = 0;
+            }
             
             if (FindObjectOfType<EndMark>().Switch1EnEndMark == true)
             {
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(endMark.position, startMark.position, contador);
             }
+            else
+            {
+                contador = 0;
+            }
             if (FindObjectOfType<EndMark>().Switch3EnEndMark)
             {
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(startMark.position, endMark.position, contador);
                 ActivarSwitch = false;
+            }
+            else
+            {
+                contador = 0;
             }
         }
     }

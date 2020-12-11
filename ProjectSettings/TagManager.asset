@@ -20,11 +20,10 @@ TagManager:
   - EndPoint
   - Techo
   - Cubo
-
-  - Switch1
+  - Audios
   - Switch2
   - Switch3
-
+  - Switch1
   layers:
   - Default
   - TransparentFX
@@ -34,14 +33,14 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Player
   - 
-  - Paredes
-  - Objetos
-  - Cubo
   - 
-  - Placa
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

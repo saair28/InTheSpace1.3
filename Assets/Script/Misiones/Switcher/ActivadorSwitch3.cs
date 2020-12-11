@@ -33,14 +33,19 @@ public class ActivadorSwitch3 : MonoBehaviour
             else
             {
                 ActivarSwitch = false;
+                contador = 0;
             }
             if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
             {
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(startMark.position, endMark.position, contador);
                 ActivarSwitch = false;
-                
 
+
+            }
+            else
+            {
+                contador = 0;
             }
 
             if (AreaSwitcher.PlayerEnArea == true && ActivarSwitch == true && FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false && FindObjectOfType<EndMark>().Switch3EnEndMark)
@@ -48,6 +53,10 @@ public class ActivadorSwitch3 : MonoBehaviour
                 contador = contador + Time.deltaTime / 5f;
                 this.transform.position = Vector3.Lerp(endMark.position, startMark.position, contador);
                 ActivarSwitch = false;
+            }
+            else
+            {
+                contador = 0;
             }
             
         }
