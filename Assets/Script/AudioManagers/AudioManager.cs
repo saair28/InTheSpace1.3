@@ -22,10 +22,11 @@ public class AudioManager : MonoBehaviour
     {
         my_pauseStat_script = my_pauseStat.GetComponent<PauseMenu>();
         my_tuto1_script = my_tuto1.GetComponent<Tutorial1>();
-        if (FindObjectOfType<Player2>().JugadorEnScena == true)
+       /*if (FindObjectOfType<Player2>().JugadorEnScena == true)
         {
             Play("AudioFondo");
         }
+       */
 
     }
 

@@ -24,6 +24,7 @@ TagManager:
   - Switch2
   - Switch3
   - Switch1
+  - Palanca
   layers:
   - Default
   - TransparentFX

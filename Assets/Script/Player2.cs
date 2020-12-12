@@ -69,6 +69,7 @@ public class Player2 : MonoBehaviour
         JugadorEnScena = true;
         //FindObjectOfType<AudioManager>().Play("Tutorial1");
        FindObjectOfType<AudioManager>().Play("Tutorial1");
+        FindObjectOfType<AudioManager>().Play("AudioFondo");
     }
 
     // Update is called once per frame

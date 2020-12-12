@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6825017086795319875}
   - component: {fileID: 6825017086795319879}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: EstanteOxigeno
   m_TagString: Ponlo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,8 +121,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6825017086795319884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.66, y: 1.53, z: 8.7}
-  m_LocalScale: {x: 1, y: 3.4462187, z: 0.8574585}
+  m_LocalPosition: {x: 0, y: 0, z: 8.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6825017086618801222}
   m_Father: {fileID: 0}
@@ -204,3 +204,4 @@ MonoBehaviour:
   target: {fileID: 0}
   Colocar: {fileID: 6825017086618801222}
   loSujeta: 0
+  misionCumplida: 0

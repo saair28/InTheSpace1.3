@@ -44,7 +44,7 @@ public class MisionsManager : MonoBehaviour
     {
         PasaASiguienteNivel();
         m1 = mision1.GetComponent<Cables>().prenderLuces;
-        m2 = mision2.GetComponent<SwitcherManager>().ganaste;
+        m2 = mision2.GetComponent<ComprobadorPalanca>().ganaste;
         m3 = mision3.GetComponent<CompletarOxigeno>().misionCompleta;
 
         m4 = mision4.GetComponent<Cables>().prenderLuces;
@@ -55,7 +55,7 @@ public class MisionsManager : MonoBehaviour
 
     public void PasaASiguienteNivel()
     {
-        if (m1==true && m2 == true && m3 == true)
+        if (m1 == true && m2 == true && m3 == true)
         {
             puerta1.SetActive(false);
             puerta2.SetActive(false);
@@ -65,6 +65,12 @@ public class MisionsManager : MonoBehaviour
                 sonido1 = true;
             }
 
+        }
+
+        else
+        {
+            puerta1.SetActive(true);
+            puerta2.SetActive(true);
         }
 
         if (m4 && m5)
