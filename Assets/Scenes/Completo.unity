@@ -11656,7 +11656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298566118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9399996, y: 5.1, z: -13.699516}
+  m_LocalPosition: {x: -20.020067, y: -0.5, z: 15.982254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1330922660}
@@ -15014,7 +15014,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405070829}
-  m_LocalRotation: {x: -0.13829002, y: -0.68494153, z: 0.13482653, w: -0.7025332}
+  m_LocalRotation: {x: -0.18540116, y: -0.36601394, z: 0.07466138, w: -0.90889275}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26178,17 +26178,17 @@ PrefabInstance:
     - target: {fileID: 5577633624510191678, guid: 8f3c7166ccecadc4597969d64f7e97f1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.94
+      value: -17.8
       objectReference: {fileID: 0}
     - target: {fileID: 5577633624510191678, guid: 8f3c7166ccecadc4597969d64f7e97f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5577633624510191678, guid: 8f3c7166ccecadc4597969d64f7e97f1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.7
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5577633624510191678, guid: 8f3c7166ccecadc4597969d64f7e97f1,
         type: 3}
@@ -30797,30 +30797,30 @@ MonoBehaviour:
   sounds:
   - name: AudioFondo
     clip: {fileID: 8300000, guid: ef85cb15d8846e0468f52c183b200a01, type: 3}
-    volume: 0.252
+    volume: 0.119
     pitch: 1.02
     loop: 1
     source: {fileID: 0}
   - name: Tutorial1
-    clip: {fileID: 8300000, guid: 51e04e8b2b40ba04b8179c292c8637ac, type: 3}
+    clip: {fileID: 8300000, guid: bdd6926df80c67d48917d751dddf0f19, type: 3}
     volume: 0.245
     pitch: 1.06
     loop: 0
     source: {fileID: 0}
   - name: MisionCables
-    clip: {fileID: 8300000, guid: 7155c58f3bd897e4cb8b3070d466530a, type: 3}
+    clip: {fileID: 8300000, guid: f20b87847a712da44a77605bfb2fd05d, type: 3}
     volume: 0.245
     pitch: 1.06
     loop: 0
     source: {fileID: 0}
   - name: MisionPalanca
-    clip: {fileID: 8300000, guid: e1b849dc130d15e4bb87d9b76fb41489, type: 3}
+    clip: {fileID: 8300000, guid: 80129855af73ea345bae4ad3f5408439, type: 3}
     volume: 0.245
     pitch: 1.06
     loop: 0
     source: {fileID: 0}
   - name: MisionOxigeno
-    clip: {fileID: 8300000, guid: ced451427e7f1e7409fe7943efd44bbe, type: 3}
+    clip: {fileID: 8300000, guid: 6cab2fe7e0618ee4ba51c593ce0cd45a, type: 3}
     volume: 0.245
     pitch: 1.06
     loop: 0
@@ -30878,7 +30878,7 @@ MonoBehaviour:
   isPaused: 0
   abrir: 0
   cronometro: 0
-  Abrete: 37
+  Abrete: 39
 --- !u!4 &820473687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3881655365501589991, guid: 61c93a3d46b7692428eb1736623637b4,
@@ -48414,7 +48414,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330922658}
-  m_LocalRotation: {x: -0.15104537, y: -0.6823759, z: 0.14726347, w: -0.6999014}
+  m_LocalRotation: {x: -0.20190266, y: -0.3645954, z: 0.08130696, w: -0.90536994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -49502,8 +49502,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358939876}
-  m_LocalRotation: {x: 0.13828968, y: 0.68494165, z: -0.13482691, w: 0.70253307}
-  m_LocalPosition: {x: 7.8793964, y: 5.03, z: -13.701054}
+  m_LocalRotation: {x: 0.18540108, y: 0.366014, z: -0.07466161, w: 0.90889263}
+  m_LocalPosition: {x: -20.020067, y: -0.5, z: 15.982254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73205,7 +73205,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004999724}
-  m_LocalRotation: {x: -0.12552197, y: -0.6872749, z: 0.12237882, w: -0.70492625}
+  m_LocalRotation: {x: -0.16888182, y: -0.36730826, z: 0.06800956, w: -0.9121065}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -79014,7 +79014,7 @@ PrefabInstance:
     - target: {fileID: 1712369619463619666, guid: 2b01ba35ffc872b479f2dbf90ecd9d72,
         type: 3}
       propertyPath: Stop
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1712369619463619667, guid: 2b01ba35ffc872b479f2dbf90ecd9d72,
         type: 3}
@@ -79987,7 +79987,7 @@ PrefabInstance:
     - target: {fileID: 3935393637639252775, guid: 40a05c043250d0b4882ad1fdef2b859a,
         type: 3}
       propertyPath: Stop
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3935393637639252792, guid: 40a05c043250d0b4882ad1fdef2b859a,
         type: 3}
