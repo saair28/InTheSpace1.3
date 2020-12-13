@@ -25,6 +25,10 @@ TagManager:
   - Switch3
   - Switch1
   - Palanca
+  - end1
+  - end2
+  - start1
+  - end3
   layers:
   - Default
   - TransparentFX

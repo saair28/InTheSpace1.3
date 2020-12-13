@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public bool abrir = false;
     public float cronometro = 0;
     public float Abrete;
+    public bool audioPlaying;
 
     // Start is called before the first frame update
 
@@ -96,9 +97,10 @@ public class AudioManager : MonoBehaviour
         if (s.source.isPlaying == false)
         {
             s.source.Play();
-            audioPlaying = true;
+            
             
         }*/
+        audioPlaying = true;
         s.source.Play();
     }
     public void Pause(string name)
@@ -112,6 +114,7 @@ public class AudioManager : MonoBehaviour
             s.source.Pause();
         }*/
         isPaused = true;
+        audioPlaying = false;
         s.source.Pause();
     }
     /*
@@ -119,7 +122,7 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = 
     }*/
-
+    
     public bool IsPlaying(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

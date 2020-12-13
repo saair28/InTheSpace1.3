@@ -131,52 +131,52 @@ public class PauseMenu : MonoBehaviour
         my_CursorMana_script.mouseActivo = true;
         GameIsPaused = true;
 
-        if (FindObjectOfType<AudioManager>().IsPlaying("Tutorial1"))
+        if (FindObjectOfType<AudioManager>().audioPlaying== true)
         {
             FindObjectOfType<AudioManager>().Pause("Tutorial1");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionCables"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionCables");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionPalanca"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionPalanca");
         }
         
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionOxigeno"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionOxigeno");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionesNivel1Completadas"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionesNivel1Completadas");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionPlacaDePresion"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionPlacaDePresion");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionesNivel2Completadas"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionesNivel2Completadas");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("IntroduccionPlanta1Audio"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("IntroduccionPlanta1Audio");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("IntroduccionPlanta2Audio"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("IntroduccionPlanta2Audio");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("MisionNucleoAudio"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("MisionNucleoAudio");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("IntroFinalAudio"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("IntroFinalAudio");
         }
-        if (FindObjectOfType<AudioManager>().IsPlaying("Tuto2"))
+        if (FindObjectOfType<AudioManager>().audioPlaying == true)
         {
             FindObjectOfType<AudioManager>().Pause("Tuto2");
         }

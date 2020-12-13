@@ -25,6 +25,10 @@ public class BajarPalanca : MonoBehaviour
     public bool Completo;
 
 
+    public bool activate1;
+
+    public bool activate2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +45,15 @@ public class BajarPalanca : MonoBehaviour
         Starty = Inicio.transform.position.y;
 
         Startz = Inicio.transform.position.z;
+        activate1 = false;
+        activate2 = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (AreaSwitcher.PlayerEnArea == true && Input.GetKeyDown(KeyCode.E) && Bajo == true)
+        if (AreaSwitcher.PlayerEnArea == true && Input.GetKeyDown(KeyCode.E) && Bajo == true && FindObjectOfType<ActivadoSwitcher1>().activate1 == false)
         {
             Vector3 Abajo = new Vector3(Endx, Endy, Endz);
 
@@ -58,6 +64,8 @@ public class BajarPalanca : MonoBehaviour
             Completo = true;
 
             Debug.Log("s");
+
+           
         }
 
         else if (AreaSwitcher.PlayerEnArea == true && Input.GetKeyDown(KeyCode.E) && Bajo == false)
@@ -69,6 +77,12 @@ public class BajarPalanca : MonoBehaviour
             Bajo = true;
 
             Completo = false;
+
+            
         }
+
+        
+
     }
+   
 }

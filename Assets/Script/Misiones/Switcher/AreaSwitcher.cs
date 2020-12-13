@@ -8,7 +8,7 @@ public class AreaSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -21,15 +21,17 @@ public class AreaSwitcher : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerEnArea = true;
+            Debug.Log("TRUEE");
 
         }
+       
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
             PlayerEnArea = false;
-
+            Debug.Log("FALLSEE");
         }
     }
 }
