@@ -8,6 +8,8 @@ public class PosicionOxigeno : MonoBehaviour
 
     public bool agarrado;
 
+    public CabinaOxigeno cabina;
+
     public void Start()
     {
         //  instance = this;
@@ -19,6 +21,7 @@ public class PosicionOxigeno : MonoBehaviour
     {
         // cabina = CabinaOxigeno.instance;
 
+
         agarrado = Player2.instance.LoSujeta;
     }
 
@@ -26,7 +29,7 @@ public class PosicionOxigeno : MonoBehaviour
     {
         if (other.tag == "Ponlo")
         {
-            CabinaOxigeno cabina = other.GetComponent<CabinaOxigeno>();
+            cabina = other.GetComponent<CabinaOxigeno>();
 
             if (cabina != null && cabina.PreguntarLibre())
             {
@@ -42,20 +45,28 @@ public class PosicionOxigeno : MonoBehaviour
         }
     }
 
-   /* private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Ponlo")
         {
-            CabinaOxigeno cabina = other.GetComponent<CabinaOxigeno>();
-
-            if (cabina != null && cabina.PreguntarLibre())
-            {
-                cabina.Posicion = ;
-
-
-                Entrar = false;
-            }
+            cabina.Posicion = null;
         }
     }
-    */
+
+    /* private void OnTriggerExit(Collider other)
+     {
+         if (other.tag == "Ponlo")
+         {
+             CabinaOxigeno cabina = other.GetComponent<CabinaOxigeno>();
+
+             if (cabina != null && cabina.PreguntarLibre())
+             {
+                 cabina.Posicion = ;
+
+
+                 Entrar = false;
+             }
+         }
+     }
+     */
 }

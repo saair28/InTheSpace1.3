@@ -33,6 +33,10 @@ public class MisionsManager : MonoBehaviour
 
     public bool m6;
 
+    public ControladorAudio controlador;
+
+    public bool verificar = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,10 @@ public class MisionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        controlador = ControladorAudio.instance;
+
+        verificar = controlador.GetComponent<ControladorAudio>().alto;
+
         PasaASiguienteNivel();
         m1 = mision1.GetComponent<Cables>().prenderLuces;
         m2 = mision2.GetComponent<ComprobadorPalanca>().ganaste;
@@ -59,7 +67,7 @@ public class MisionsManager : MonoBehaviour
         {
             puerta1.SetActive(false);
             puerta2.SetActive(false);
-            if (sonido1 == false)
+            if (sonido1 == false && verificar == false)
             {
                 FindObjectOfType<AudioManager>().Play("MisionesNivel1Completadas");
                 sonido1 = true;
@@ -76,7 +84,7 @@ public class MisionsManager : MonoBehaviour
         if (m4 && m5)
         {
             puerta3.SetActive(false);
-            if (sonido2 == false)
+            if (sonido2 == false && verificar == false)
             {
                 FindObjectOfType<AudioManager>().Play("MisionesNivel2Completadas");
                 sonido2 = true;
