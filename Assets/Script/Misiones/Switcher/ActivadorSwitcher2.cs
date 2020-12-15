@@ -119,7 +119,7 @@ public class ActivadorSwitcher2 : MonoBehaviour
 
                 //FindObjectOfType<BajarPalanca>().Bajo = true;
 
-                FindObjectOfType<BajarPalanca>().Completo = false;
+               // FindObjectOfType<BajarPalanca>().Completo = false;
             }
         }
     }/*
