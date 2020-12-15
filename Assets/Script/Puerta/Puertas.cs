@@ -16,6 +16,8 @@ public class Puertas : MonoBehaviour
     public bool abrir;
     public bool puertaTutorial;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +33,18 @@ public class Puertas : MonoBehaviour
 
             if (abrir == true)
             {
+
                 if (AreaDeActivacion.playerEnArea == true)
                 {
                     AreaDeActivacion.playerSalioDelArea = false;
                     contador = contador + Time.deltaTime;
+                   
                 }
                 if (AreaDeActivacion.playerSalioDelArea == true)
                 {
                     AreaDeActivacion.playerEnArea = false;
                     contador = contador - Time.deltaTime;
+                    
                 }
                 if (contador > 1)
                 {
@@ -50,6 +55,7 @@ public class Puertas : MonoBehaviour
                     contador = 0;
                 }
                 this.transform.position = Vector3.Lerp(point1.position, point2.position, contador);
+                
             }
         }
 
@@ -60,11 +66,13 @@ public class Puertas : MonoBehaviour
             {
                 AreaDeActivacion.playerSalioDelArea = false;
                 contador = contador + Time.deltaTime;
+                
             }
             if (AreaDeActivacion.playerSalioDelArea == true)
             {
                 AreaDeActivacion.playerEnArea = false;
                 contador = contador - Time.deltaTime;
+                
             }
             if (contador > 1)
             {
@@ -76,6 +84,9 @@ public class Puertas : MonoBehaviour
             }
             this.transform.position = Vector3.Lerp(point1.position, point2.position, contador);
         }
+
+        
     }
 
+    
 }

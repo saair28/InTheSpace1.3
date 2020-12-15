@@ -264,3 +264,6 @@ MonoBehaviour:
   point1: {fileID: 6109638131005046773}
   point2: {fileID: 3856770636306630863}
   contador: 0
+  audioTuTorial: {fileID: 0}
+  abrir: 0
+  puertaTutorial: 0

@@ -25,6 +25,7 @@ public class ActivadorPuerta : MonoBehaviour
         {
             playerEnArea = true;
             //playerSalioDelArea = false;
+            FindObjectOfType<AudioManager>().Play("AudioPuerta");
 
         }
     }
