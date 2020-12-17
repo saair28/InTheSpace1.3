@@ -20,6 +20,12 @@ public class ActivadorSwitcher2 : MonoBehaviour
     public float Starty;
     public float Startz;
     public GameObject Fin;
+    public GameObject palanca1;
+
+    public bool Verde;
+    public bool Rojo;
+    public bool Amarillo;
+    public bool activity1;
 
     public GameObject Inicio;
     void Start()
@@ -44,7 +50,21 @@ public class ActivadorSwitcher2 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
+    {
+        activity1 = palanca1.GetComponent<ActivadoSwitcher1>().activate1;
+
+        if (activity1)
+        {
+            Amarillo = true;
+            Verde = false;
+            Rojo = false;
+        }
+        else
+        {
+            Amarillo = false;
+            Rojo = true;
+        }
+        /*
         if (FindObjectOfType<SwitcherManager>().ganaste == false)
         {
             if (AreaSwitcher.PlayerEnArea == true )//&& FindObjectOfType<StartMark>().inmunity1 == false || FindObjectOfType<EndMark>().inmunity2 == false)
@@ -108,8 +128,8 @@ public class ActivadorSwitcher2 : MonoBehaviour
 
             transform.position = Abajo;
         }/*
-        /*else*/ 
-        if(FindObjectOfType<ActivadoSwitcher1>().resolucionPuzzle == false)
+        /*else*/
+        if (FindObjectOfType<ActivadoSwitcher1>().resolucionPuzzle == false)
         { 
             if (/*FindObjectOfType<ActivadoSwitcher1>().activateStart == true &&*/ FindObjectOfType<AreaSwitcher>().PlayerEnArea == false &&  FindObjectOfType<ActivadoSwitcher1>().activate1 == true)
             {
@@ -122,18 +142,71 @@ public class ActivadorSwitcher2 : MonoBehaviour
                // FindObjectOfType<BajarPalanca>().Completo = false;
             }
         }
-    }/*
-    public void OnTriggerStay(Collider other)
+    }
+/*
+    public void OnTriggerEnter(Collider other)
+    {
+        if (Amarillo == false)
+        {
+            if (other.tag == ("start2"))
+            {
+                Rojo = true;
+                Verde = false;
+            }
+
+            if (other.tag == ("end2"))
+            {
+                //luz verde;
+                Verde = true;
+                Rojo = false;
+            }
+        }
+    }
+*/
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "end2")
         {
-            Debug.Log("sasfkjh");
-            activate2 = true;
-        }
-        else
-        {
-            activate2 = false;
-        }
+           
 
-    }*/
+            //luz verde
+            Verde = true;
+            Rojo = false;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "end2")
+        {
+          
+
+            //luz roja
+            Verde = false;
+            Rojo = true;
+        }
+    }
+    /*
+        public void OnTriggerExit(Collider other)
+        {
+            if (other.tag == ("end2"))
+            {
+                //luz verde;
+                Verde = false;
+                Rojo = true;
+            }
+        }
+        /*
+        public void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "end2")
+            {
+                Debug.Log("sasfkjh");
+                activate2 = true;
+            }
+            else
+            {
+                activate2 = false;
+            }
+
+        }*/
 }

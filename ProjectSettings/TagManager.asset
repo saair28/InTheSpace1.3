@@ -29,6 +29,8 @@ TagManager:
   - end2
   - start1
   - end3
+  - End2
+  - start2
   layers:
   - Default
   - TransparentFX

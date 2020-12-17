@@ -60,6 +60,8 @@ public class Player2 : MonoBehaviour
 
     public float Secae;
 
+    public int s = 0;
+
 
 
     // Start is called before the first frame update
@@ -159,6 +161,13 @@ public class Player2 : MonoBehaviour
             if (Agarra == Nucleo)
             {
                 Secae = Secae + 1 * Time.deltaTime;
+
+                if (s == 0)
+                {
+                    s = 1;
+                    FindObjectOfType<AudioManager>().Play("SobreCalentado");
+                }
+                
             }
 
             if (Input.GetKeyDown(KeyCode.E) || Secae >= 3)
@@ -182,6 +191,8 @@ public class Player2 : MonoBehaviour
                 LoSujeta = false;
 
                 Secae = 0;
+
+                s = 0;
 
             }
         }

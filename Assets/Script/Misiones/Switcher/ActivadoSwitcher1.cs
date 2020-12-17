@@ -22,6 +22,10 @@ public class ActivadoSwitcher1 : MonoBehaviour
     public float Startz;
     public GameObject Fin;
 
+    public bool Verde;
+
+    public bool Roja;
+
     public bool resolucionPuzzle;
 
     public GameObject Inicio;
@@ -46,6 +50,9 @@ public class ActivadoSwitcher1 : MonoBehaviour
 
         Startz = Inicio.transform.position.z;
         resolucionPuzzle = false;
+
+        Roja = true;
+
     }
 
     // Update is called once per frame
@@ -123,11 +130,19 @@ public class ActivadoSwitcher1 : MonoBehaviour
             {
                 Debug.Log("sasfkjh");
                 activate1 = true;
-            }else
-            {
-                activate1 = false;
+
+                
             }
-        }/*
+        }
+
+        if (other.tag == "end1")
+        {
+
+            Verde = true;
+            Roja = false;
+        }
+
+        /*
         if (other.tag == "start1")
         {
             activateStart = true;
@@ -146,10 +161,13 @@ public class ActivadoSwitcher1 : MonoBehaviour
                 Debug.Log("sasfkjh");
                 activate1 = false;
             }
-            else
-            {
-                activate1 = true;
-            }
+        }
+
+        if (other.tag == "end1")
+        {
+            Verde = false;
+            Roja = true;
         }
     }
+    
 }

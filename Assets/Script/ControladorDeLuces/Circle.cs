@@ -10,6 +10,7 @@ public class Circle : MonoBehaviour
     //public GameObject circle;
     //public GameObject circleFill;
 
+    public bool Verde;
     public bool desactivaCircle = false;
     //[SerializeField] Text txtProgress;
 
@@ -36,6 +37,7 @@ public class Circle : MonoBehaviour
         {
 
             desactivaCircle = true;
+            Verde = true;
             
         }
 

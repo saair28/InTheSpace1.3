@@ -16,6 +16,8 @@ public class ControladorAudio : MonoBehaviour
     public GameObject Audio8;
     public GameObject Audio9;
 
+    public GameObject Audio10;
+
     public bool aud1;
     public bool aud2;
     public bool aud3;
@@ -25,6 +27,7 @@ public class ControladorAudio : MonoBehaviour
     public bool aud7;
     public bool aud8;
     public bool aud9;
+    public bool aud10;
 
     public bool alto;
     // Start is called before the first frame update
@@ -46,13 +49,16 @@ public class ControladorAudio : MonoBehaviour
         aud7 = Audio7.GetComponent<IntroduccionPlanta2>().Ocupado;
         aud8 = Audio8.GetComponent<IntroduccionFinal>().Ocupado;
         aud9 = Audio9.GetComponent<MisionNucleoAudio>().Ocupado;
-        Verificador();
+
+        aud10 = Audio10.GetComponent<MisionNucleo>().Ocupado;
+
+       Verificador();
         
     }
 
     public void Verificador()
     {
-        if (aud1 == true || aud2 == true || aud3 == true || aud4 == true || aud5 == true || aud6 == true || aud7 == true || aud8 == true || aud9 == true)
+        if (aud1 == true || aud2 == true || aud3 == true || aud4 == true || aud5 == true || aud6 == true || aud7 == true || aud8 == true || aud9 == true || aud10)
         {
             alto = true;
         }

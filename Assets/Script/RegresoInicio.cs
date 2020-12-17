@@ -51,13 +51,25 @@ public class RegresoInicio : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "finDelMundo")
+        if (collision.gameObject.tag == ("Techo"))
+        {
+            regresar = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == ("Techo"))
         {
             regresar = false;
         }
-        if (other.tag == "Techo")
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "finDelMundo")
         {
             regresar = false;
         }

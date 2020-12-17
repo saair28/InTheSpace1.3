@@ -37,6 +37,15 @@ public class MisionsManager : MonoBehaviour
 
     public bool verificar = false;
 
+    public bool Niveles = false;
+
+    public float Nivel1;
+
+
+    public float Nivel2;
+
+    public float cronometro = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +68,42 @@ public class MisionsManager : MonoBehaviour
         m5 = mision5.GetComponent<PlacaPresion>().misionCompleta;
 
         m6 = mision6.GetComponent<CabinaOxigeno>().misionCumplida;
+
+        if (FindObjectOfType<AudioManager>().IsPlaying("MisionesNivel1Completadas"))
+        {
+            Niveles = true;
+
+            cronometro = cronometro + 1 * Time.deltaTime;
+        }
+        else
+        {
+            Niveles = false;
+
+            cronometro = 0;
+        }
+
+        if (cronometro >= Nivel1)
+        {
+            FindObjectOfType<AudioManager>().Pause("MisionesNivel1Completadas");
+        }
+
+        if (FindObjectOfType<AudioManager>().IsPlaying("MisionesNivel2Completadas"))
+        {
+            Niveles = true;
+
+            cronometro = cronometro + 1 * Time.deltaTime;
+        }
+        else
+        {
+            Niveles = false;
+
+            cronometro = 0;
+        }
+
+        if (cronometro >= Nivel2)
+        {
+            FindObjectOfType<AudioManager>().Pause("MisionesNivel2Completadas");
+        }
     }
 
     public void PasaASiguienteNivel()
@@ -71,6 +116,8 @@ public class MisionsManager : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("MisionesNivel1Completadas");
                 sonido1 = true;
+
+
             }
 
         }
@@ -88,6 +135,8 @@ public class MisionsManager : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("MisionesNivel2Completadas");
                 sonido2 = true;
+                
+               
             }
         }
         else
