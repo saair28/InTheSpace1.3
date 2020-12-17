@@ -112,12 +112,21 @@ public class Controlador : MonoBehaviour
             Debug.Log("JUMP");
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Win")
         {
-            SceneManager.LoadScene("Victoria");
+            modelo.Nivel2.SetActive(true);
+            modelo.Luz1.SetActive(false);
+            modelo.Luz2.SetActive(true);
+            modelo.JugadorEnScena = false;
         }
+        /* if (other.gameObject.CompareTag("Audios"))
+         {
+             Sereproduce = true;
+         }
+        */
     }
-    
+
 }

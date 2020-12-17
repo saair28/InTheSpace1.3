@@ -29,7 +29,7 @@ public class CabinaOxigeno : MonoBehaviour
     {
        // Player player = new Player();
 
-        loSujeta = Player2.instance.LoSujeta;
+        loSujeta = Modelo.instance.LoSujeta;
 
         if (Posicion != null && target == null && loSujeta != true)
         {

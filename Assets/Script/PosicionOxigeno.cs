@@ -22,7 +22,7 @@ public class PosicionOxigeno : MonoBehaviour
         // cabina = CabinaOxigeno.instance;
 
 
-        agarrado = Player2.instance.LoSujeta;
+        agarrado = Modelo.instance.LoSujeta;
     }
 
     private void OnTriggerEnter(Collider other)
